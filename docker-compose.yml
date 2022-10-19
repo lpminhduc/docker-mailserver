@@ -21,7 +21,7 @@ services:
       - /etc/docker-data/dms/mail-state/:/var/mail-state/
       - /etc/docker-data/dms/mail-logs/:/var/log/mail/
       - /etc/docker-data/dms/config/:/tmp/docker-mailserver/
-      - /etc/docker-data/traefik/acme.json:/etc/letsencrypt/acme.json:ro
+      - /etc/docker-data/traefik/letsencrypt/acme.json:/etc/letsencrypt/acme.json:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
       - ENABLE_SPAMASSASSIN=0
@@ -56,10 +56,10 @@ services:
        - --entrypoints.https.address=:443
        - --entrypoints.https.http.tls.certResolver=letsencrypt
        - --certificatesresolvers.letsencrypt.acme.email=admin@ph2test-maildocker.site
-       - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+       - --certificatesresolvers.letsencrypt.acme.storage=/traefik/letsencrypt/acme.json
        - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http
     volumes:
-       - /etc/docker-data/traefik/acme.json:/acme.json
+       - /etc/docker-data/traefik/letsencrypt/acme.json:/acme.json
        - /var/run/docker.sock:/var/run/docker.sock:ro
 
   whoami:
