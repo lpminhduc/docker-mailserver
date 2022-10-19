@@ -65,4 +65,4 @@ services:
   whoami:
     image: docker.io/traefik/whoami:latest
     labels:
-       - "traefik.http.routers.whoami.rule=Host(`mail.ph2test-maildocker.site`)"
+       - "traefik.http.routers.whoami.rule=Host(`ph2test-maildocker.site`)"
