@@ -31,8 +31,8 @@ services:
       - ENABLE_POSTGREY=0
       - ENABLE_SASLAUTHD=0
       - ONE_DIR=1
-      - SSL_TYPE= letsencrypt
-      - SSL_DOMAIN= ph2test-maildocker.site
+      - SSL_TYPE=letsencrypt
+      - SSL_DOMAIN=ph2test-maildocker.site
     restart: always
     stop_grace_period: 1m
     cap_add:
