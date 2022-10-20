@@ -30,6 +30,7 @@ services:
       - ENABLE_POSTGREY=0
       - ENABLE_SASLAUTHD=0
       - ONE_DIR=1
+      - asdasd
     restart: always
     stop_grace_period: 1m
     cap_add:
