@@ -31,6 +31,7 @@ services:
       - ENABLE_SASLAUTHD=0
       - ONE_DIR=1
       - asdasd
+      - hksdjfh
     restart: always
     stop_grace_period: 1m
     cap_add:
